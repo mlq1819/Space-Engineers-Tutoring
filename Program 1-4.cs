@@ -26,7 +26,10 @@ IMyDoor GetDoorWithName(string doorname){
  * The "argument" is the words you put as the programmable block's argument
 */
 	public void Tutorial_Main(string argument){
-		IMyDoor Door;
+		string name="Program 1-4 Door";
+		
+		
+		
 	}
 
 /*
