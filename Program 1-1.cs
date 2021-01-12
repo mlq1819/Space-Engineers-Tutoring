@@ -83,6 +83,13 @@ public Program(){
 	Prog_Light=(IMyInteriorLight) GridTerminalSystem.GetBlockWithName(Prog_String+" Light");
 	Prog_Light.Radius=5;
 	Prog_Light.Intensity=5;
+	Prog_Light.ShowInTerminal=false;
+	Prog_Light.ShowInToolbarConfig=false;
+	IMyTextPanel Prog_Panel=(IMyTextPanel) GridTerminalSystem.GetBlockWithName(Prog_String+" LCD");
+	Prog_Panel.ContentType=ContentType.TEXT_AND_IMAGE;
+	Prog_Panel.Alignment=TextAlignment.CENTER;
+	Prog_Panel.ShowInTerminal=false;
+	Prog_Panel.ShowInToolbarConfig=false;
 }
 
 public void Save(){
