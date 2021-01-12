@@ -59,7 +59,7 @@ class Tutorial{
 			return Prog.P.Storage;
 		}
 		set{
-			Prog.P.Storage=value;
+			Prog.SetStorage(value);
 		}
 	}
 }
@@ -68,6 +68,7 @@ class Tutorial{
 
 public Program(){
 	Prog.P=this;
+	Prog.SetStorage=SetStorage;
 	Me.CustomName=(Program_Name+" Programmable block").Trim();
 	for(int i=0;i<Me.SurfaceCount;i++){
 		Me.GetSurface(i).FontColor=DEFAULT_TEXT_COLOR;
@@ -186,10 +187,15 @@ long cycle=0;
 char loading_char='|';
 double seconds_since_last_update=0;
 Tutorial MyTutorial;
-string Prog_String="Program 0-0";
+string Prog_String="Program 1-1";
 IMyInteriorLight Prog_Light;
+public bool SetStorage(string set){
+	this.Storage=set;
+	return true;
+}
 
 public class Prog{
+	public static Func<string,bool> SetStorage;
 	public static MyGridProgram P;
 	public static void Write(string text,bool new_line=true,bool append=true){
 		P.Echo(text);
