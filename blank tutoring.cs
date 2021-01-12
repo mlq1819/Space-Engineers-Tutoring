@@ -75,6 +75,8 @@ public Program(){
 	Me.GetSurface(1).TextPadding=40.0f;
 	MyTutorial=new Tutorial();
 	MyTutorial.Tutorial_Program();
+	Me.GetSurface(0).WriteText("",false);
+	Prog_Light=(IMyInteriorLight) GridTerminalSystem.GetBlockWithName(Prog_String+" Light");
 }
 
 public void Save(){
@@ -147,6 +149,8 @@ long cycle=0;
 char loading_char='|';
 double seconds_since_last_update=0;
 Tutorial MyTutorial;
+string Prog_String="Program 0-0";
+IMyInteriorLight Prog_Light;
 
 public class Prog{
 	public static MyGridProgram P;
