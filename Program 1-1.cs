@@ -86,6 +86,7 @@ public Program(){
 	Prog_Light.Intensity=5;
 	Prog_Light.ShowInTerminal=false;
 	Prog_Light.ShowInToolbarConfig=false;
+	Prog_Light.Color=new Color(255,255,255,255);
 	IMyTextPanel Prog_Panel=(IMyTextPanel) GridTerminalSystem.GetBlockWithName(Prog_String+" LCD");
 	Prog_Panel.ContentType=ContentType.TEXT_AND_IMAGE;
 	Prog_Panel.Alignment=TextAlignment.CENTER;
