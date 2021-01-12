@@ -3,7 +3,7 @@ Color DEFAULT_TEXT_COLOR=new Color(197,137,255,255); //I determine the color of 
 Color DEFAULT_BACKGROUND_COLOR=new Color(44,0,88,255); //I determine the color of the screen! (RGBA)
 
 /*
- * Assignment 1-2: Write a program that outputs your first name, a space, and then your last name.
+ * Assignment 1-2: Write a program that outputs your first name, a space, and then your last name; however, you must use the argument parameter to do this.
 */
 
 
@@ -149,26 +149,10 @@ public void Main(string argument, UpdateType updateSource)
 	else{
 		string[] words=Me.GetSurface(0).GetText().Split(' ');
 		bool passed=true;
-		if(words.Length!=2)
+		if(words.Length<2)
 			passed=false;
-		foreach(string name in words){
-			bool first=true;
-			if(name.Length==0)
-				passed=false;
-			for(int i=0;i<name.Length;i++){
-				if(first){
-					if(!char.IsUpper(name[i]))
-						passed=false;
-					first=false;
-				}
-				else {
-					if(name[0]=='\'')
-						first=true;
-					else
-						passed=passed&&char.IsLower(name[i]);
-				}
-			}
-		}
+		if(!Me.GetSurface(0).GetText().Equals(argument))
+			passed=false;
 		if(passed)
 			Pass();
 		else
