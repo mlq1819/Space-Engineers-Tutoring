@@ -24,7 +24,7 @@ class Tutorial{
  * The "argument" is the words you put as the programmable block's argument
 */
 	public void Tutorial_Main(string argument){
-		
+		Print("");
 	}
 
 /*
