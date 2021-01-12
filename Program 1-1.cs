@@ -54,6 +54,12 @@ class Tutorial{
 		Prog.Write(input);
 	}
 	
+//Don't worry about anything beyond this point
+	
+	
+	
+	
+	
 	public string Storage{
 		get{
 			return Prog.P.Storage;

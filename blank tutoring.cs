@@ -50,6 +50,12 @@ class Tutorial{
 		Prog.Write(input);
 	}
 	
+//Don't worry about anything beyond this point
+	
+	
+	
+	
+	
 	public string Storage{
 		get{
 			return Prog.P.Storage;
@@ -59,8 +65,6 @@ class Tutorial{
 		}
 	}
 }
-
-//Don't worry about code down here; it all helps make this easier for you
 
 public Program(){
 	Prog.P=this;
