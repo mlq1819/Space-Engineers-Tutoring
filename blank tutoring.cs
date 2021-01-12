@@ -129,11 +129,6 @@ void Pass(){
 	Prog_Light.Intensity=10;
 }
 
-void InProgress(){
-	Prog_Light.Color=new Color(255,255,0,255);
-	Prog_Light.Intensity=7.5f;
-}
-
 void Fail(){
 	Prog_Light.Color=new Color(255,0,0,255);
 	Prog_Light.Intensity=5;

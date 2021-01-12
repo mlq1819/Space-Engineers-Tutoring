@@ -135,11 +135,6 @@ void Pass(){
 	Prog_Light.Intensity=10;
 }
 
-void InProgress(){
-	Prog_Light.Color=new Color(255,255,0,255);
-	Prog_Light.Intensity=7.5f;
-}
-
 void Fail(){
 	Prog_Light.Color=new Color(255,0,0,255);
 	Prog_Light.Intensity=5;
@@ -154,8 +149,6 @@ public void Main(string argument, UpdateType updateSource)
 		my_text=my_text.Substring(0,my_text.Length-1);
 	if(my_text.Equals("hello world"))
 		Pass();
-	else if(my_text.Length>0)
-		InProgress();
 	else 
 		Fail();
 }
