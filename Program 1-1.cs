@@ -81,6 +81,8 @@ public Program(){
 	MyTutorial.Tutorial_Program();
 	Me.GetSurface(0).WriteText("",false);
 	Prog_Light=(IMyInteriorLight) GridTerminalSystem.GetBlockWithName(Prog_String+" Light");
+	Prog_Light.Radius=5;
+	Prog_Light.Intensity=5;
 }
 
 public void Save(){
@@ -113,11 +115,34 @@ void UpdateProgramInfo(){
 	Me.GetSurface(1).WriteText("\n"+ToString(Time_Since_Start)+" since last reboot",true);
 }
 
+void Pass(){
+	Prog_Light.Color=new Color(0,255,0,255);
+	Prog_Light.Intensity=10;
+}
+
+void InProgress(){
+	Prog_Light.Color=new Color(255,255,0,255);
+	Prog_Light.Intensity=7.5f;
+}
+
+void Fail(){
+	Prog_Light.Color=new Color(255,0,0,255);
+	Prog_Light.Intensity=5;
+}
+
 public void Main(string argument, UpdateType updateSource)
 {
 	UpdateProgramInfo();
 	MyTutorial.Tutorial_Main(argument);
-	
+	string my_text=Me.GetSurface(0).GetText().ToLower().Trim();
+	if(my_text.Length>0&&my_text[my_text.Length-1]=='!')
+		my_text=my_text.Substring(0,my_text.Length-1);
+	if(my_text.Equals("hello world"))
+		Pass();
+	else if(my_text.Length>0)
+		InProgress();
+	else 
+		Fail();
 }
 
 TimeSpan FromSeconds(double seconds){
