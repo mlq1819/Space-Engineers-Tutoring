@@ -141,6 +141,8 @@ public void Main(string argument, UpdateType updateSource)
 	UpdateProgramInfo();
 	MyTutorial.Tutorial_Main(argument);
 	Prog_Light.Intensity=MyTutorial.Brightness;
+	Write("Brightness: "+MyTutorial.Brightness.ToString());
+	Write("Default: "+(new Tutorial()).Brightness.ToString());
 	if(MyTutorial.Brightness==10&&(new Tutorial()).Brightness!=10)
 		Pass();
 	else
